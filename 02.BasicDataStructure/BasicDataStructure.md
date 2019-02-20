@@ -1,9 +1,8 @@
 2.1 Linear List
 ================================
-
-* Linear list, ordered list, or just list (cuz "order" is important in here.)  
-* Element. (if there's no element, => empty list. A = {})  
-* A = (a𝟶, a𝟷, ..., a𝑛-𝟷) ≠ A = {a𝟶, a𝟷, ..., a𝑛-𝟷}  
+(1) Linear list, ordered list, or just list (cuz "order" is important in here.)  
+(2) Element. (if there's no element, => empty list. A = {})  
+(3) A = (a𝟶, a𝟷, ..., a𝑛-𝟷) ≠ A = {a𝟶, a𝟷, ..., a𝑛-𝟷}  
 
 2.1.1 Implementation of linear list
 --------------------------------
@@ -27,4 +26,24 @@
 
 2.1.5 Application of Array : Polynomials  
 --------
-(1) Implement in Linear List => 
+(1) Implement in Linear List =>  
+(2) Can contain several polynomials in one array  
+&nbsp;&nbsp;&nbsp; if p(x) = 3x^1000 + 4x - 1  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;q(x) = x^3 + 20x^2 - 5x + 10  
+**while (sp ≤ fp && sq ≤ fq)  
+
+2.2 Stack & Queue  
+====
+
+(1) Special linear list, that position of insertion and elimination is limited.  
+(2) Used in System SW, such as OS compiler.  
+&nbsp;&nbsp;&nbsp;ex) return address in function : save at Stack, CPU scheduling : Queue)  
+
+2.2.1 Stack 
+----
+(1) Insertion & elimination => only **top**  
+(2) Bottom is fixed, top = -1  
+(3) LIFO(Last In First Out)  
+(4) Push(insert opr), pop(read & delete opr), craete, delete  
+(5) When implement it, check its condition with "Stack_empty()" and "Stack_overflow".  
+
