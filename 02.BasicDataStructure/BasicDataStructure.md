@@ -69,3 +69,8 @@
 &nbsp;char dequeue(int *front, int rear) : *front = (*front+1)%MAX_QSIZE  
 * If rear == MAX_QSIZE => **rear = 0**  
 
+2.2.3 Multiple Stack 
+---
+(1) Several arrays in one pool  
+(2) Generally, to implement n-stack in one array, divide array into n pieces and set the top and the bottom  
+(3) Initialize multiple stack -> equally :  
