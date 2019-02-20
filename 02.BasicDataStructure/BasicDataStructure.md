@@ -34,7 +34,6 @@
 
 2.2 Stack & Queue  
 ====
-
 (1) Special linear list, that position of insertion and elimination is limited.  
 (2) Used in System SW, such as OS compiler.  
 &nbsp;&nbsp;&nbsp;ex) return address in function : save at Stack, CPU scheduling : Queue)  
@@ -46,4 +45,22 @@
 (3) LIFO(Last In First Out)  
 (4) Push(insert opr), pop(read & delete opr), craete, delete  
 (5) When implement it, check its condition with "Stack_empty()" and "Stack_overflow".  
+(6) Implementation of queue  
 
+2.2.2 Queue 
+---
+(1) Insertion : rear, Elimintaion : Front  
+(2) FIFO(First In First Out)  
+(3) Enqueue(insert opr), dequeue(read & delete opr), create, destroy  
+(4) Application of queue :  
+* level-order search of tree, binary tree  
+* breadth-first search of graph  
+* scheduling(CPU, Disc), buffer  
+
+(5) Implementation of queue => **Circular Queue**  
+* Number of data is "MAX_SIZE-1" (limited)  
+* Suppose as if the front and the rear of array are interlocked  
+* Insertion and elimination is handled in index's operation  
+* front: -1, rear: -1  
+* queue
+ 
