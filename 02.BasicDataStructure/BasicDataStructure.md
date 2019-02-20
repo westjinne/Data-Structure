@@ -3,28 +3,28 @@
 
 * Linear list, ordered list, or just list (cuz "order" is important in here.)  
 * Element. (if there's no element, => empty list. A = {})  
-* A = (a𝟶, a𝟷, ..., a𝑛-𝟷) ≠ A = {a𝟶, a𝟷, ..., a𝑛-𝟷}
+* A = (a𝟶, a𝟷, ..., a𝑛-𝟷) ≠ A = {a𝟶, a𝟷, ..., a𝑛-𝟷}  
 
-1.1.1 Concept of Data Structure
+2.1.1 Implementation of linear list
 --------------------------------
-(1) Abstract data type : datas and models (of data's operation) ex) Integer, Phonebook, Stack, Queue
-(2) Data type : dta object provided by programming language and valid operations. 
-(3) Data structure : data organization, management and storage format that enables efficient access and modification. 
-                     ex) Stack, Queue, Binary tree, Graph
+* One-dimensional arrays, listed lists  
 
-1.1.2 Relationship between Data structure and Algorithm
---------------------------------
-(1) Program = Data Structure + Algorithm
-(2) If the program is a sentence, the data structure must be nouns and algorithm be verbs. 
+2.1.3 Features of **array**  
+--------------------------
+(1) Sequential mapping - by its logical address  
+(2) Random access is possible  
+(3) Insertion or elimination is inefficient (the other elements have to move)  
+(4) Array : rigid ⟷ Linked List : flexible  
+(5) When implementing  
+- suppose there's a maximum length and declare it MAX_LENGTH (0 ≤ index ≤ MAX-1)  
+- use structure (-> in Java, use an Object & Class -> OOP!)  
+- element &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; address  
+&nbsp;&nbsp;&nbsp;list[0]  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B   
+&nbsp;&nbsp;&nbsp;list[1]  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B + sizeof(int)  
+&nbsp;&nbsp;&nbsp;list[2]  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B + 2*sizeof(int)  
+&nbsp;&nbsp;&nbsp; ...  
+&nbsp;&nbsp;&nbsp;list[n-1]  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B + (n-1)*sizeof(int)  
 
-1.4 Algorithm Analysis
---------------------------------
-* Algorithm  = 
-(1) input 
-(2) output 
-(3) definiteness 
-(4) finiteness (it must be end after finite steps)
-(5) effectiveness 
-
-1.4.5 Effectiveness of Algorithm and complexity function
-* 
+2.1.5 Application of Array : Polynomials  
+--------
+(1) Implement in Linear List => 
