@@ -66,6 +66,6 @@
 * front: -1, rear: -1  
 * queue_empty(): front == rear, queue_overflow() : front == (*rear+1)%MAX_QSIZE  
 * void enqueue(int front, int *rear, char x) : *rear = (*rear + 1)%MAX_QSIZE,  
-&nbsp;&nbsp;&nbsp;char dequeue(int *front, int rear) : *front = (*front+1)%MAX_QSIZE  
+&nbsp;char dequeue(int *front, int rear) : *front = (*front+1)%MAX_QSIZE  
 * If rear == MAX_QSIZE => **rear = 0**  
 
