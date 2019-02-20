@@ -25,17 +25,17 @@
 
 1.4.1 Effectiveness of Algorithm and complexity function
 --------------------------------
-* Bacis operation  
+(1) Bacis operation  
 ex) sort - compare its elements  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;search - compare keys and elements  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;multiply of matrix - addition and multiplication  
-* Time Complexity (=> loop)  
-(1) time complexity function : T(n), n is a size of problem (Generally, number of input)  
-(2) worst-case time complexity function : T𝑤(n) = max{t(I)| I∈D𝑛}   
+(2) Time Complexity (=> loop)  
+* time complexity function : T(n), n is a size of problem (Generally, number of input)  
+* worst-case time complexity function : T𝑤(n) = max{t(I)| I∈D𝑛}   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(D𝑛 : set of all inputs(size n), I : element of D𝑛, t(I) : count number of algorithm's basic operation)
-* Average analysis(expected-case analysis) : T𝑒(n) = ∑p(I)t(I) (p(I) : probability of input "I" happens)  
-* Space complexity  
-(1) Memory or space to save *input, temp result, final result*  
+(3) Average analysis(expected-case analysis) : T𝑒(n) = ∑p(I)t(I) (p(I) : probability of input "I" happens)  
+(4) Space complexity  
+* Memory or space to save *input, temp result, final result*  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ex) Size of array, linked list  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Size of stack used in system  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Size of stack used in program  
