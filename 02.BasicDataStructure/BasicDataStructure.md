@@ -46,6 +46,8 @@
 (4) Push(insert opr), pop(read & delete opr), craete, delete  
 (5) When implement it, check its condition with "Stack_empty()" and "Stack_overflow".  
 (6) Implementation of queue  
+* stack_empty() : *top ≥ MAX_SIZE-1, stack_overflow() : *top == -1  
+* void push(int *top, char x): *top++, char pop(int *top) : *top--  
 
 2.2.2 Queue 
 ---
@@ -62,5 +64,8 @@
 * Suppose as if the front and the rear of array are interlocked  
 * Insertion and elimination is handled in index's operation  
 * front: -1, rear: -1  
-* queue
- 
+* queue_empty(): front == rear, queue_overflow() : front == (*rear+1)%MAX_QSIZE  
+* void enqueue(int front, int *rear, char x) : *rear = (*rear + 1)%MAX_QSIZE,  
+&nbsp;&nbsp;&nbsp;char dequeue(int *front, int rear) : *front = (*front+1)%MAX_QSIZE  
+* If rear == MAX_QSIZE => **rear = 0**  
+
