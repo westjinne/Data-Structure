@@ -1,5 +1,9 @@
-1.1 Data structure and Algorithm
+2.1 Linear List
 ================================
+
+* Linear list, ordered list, or just list (cuz "order" is important in here.)  
+* Element. (if there's no element, => empty list. A = {})  
+* A = (a𝟶, a𝟷, ..., a𝑛-𝟷) ≠ A = {a𝟶, a𝟷, ..., a𝑛-𝟷}
 
 1.1.1 Concept of Data Structure
 --------------------------------
