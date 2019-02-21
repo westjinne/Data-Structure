@@ -46,8 +46,8 @@
 (4) Push(insert opr), pop(read & delete opr), craete, delete  
 (5) When implement it, check its condition with "Stack_empty()" and "Stack_overflow".  
 (6) Implementation of queue  
-* stack_empty() : *top ≥ MAX_SIZE-1, stack_overflow() : *top == -1  
-* void push(int *top, char x): *top++, char pop(int *top) : *top--  
+* stack_empty(): *top ≥ MAX_SIZE-1, stack_overflow(): *top == -1  
+* void push(int *top, char x): *top++, char pop(int *top): *top--  
 
 2.2.2 Queue 
 ---
@@ -64,13 +64,45 @@
 * Suppose as if the front and the rear of array are interlocked  
 * Insertion and elimination is handled in index's operation  
 * front: -1, rear: -1  
-* queue_empty(): front == rear, queue_overflow() : front == (*rear+1)%MAX_QSIZE  
-* void enqueue(int front, int *rear, char x) : *rear = (*rear + 1)%MAX_QSIZE,  
-&nbsp;char dequeue(int *front, int rear) : *front = (*front+1)%MAX_QSIZE  
+* queue_empty(): front == rear, queue_overflow(): front == (*rear+1)%MAX_QSIZE  
+* void enqueue(int front, int *rear, char x): *rear = (*rear + 1)%MAX_QSIZE,  
+&nbsp;char dequeue(int *front, int rear): *front = (*front+1)%MAX_QSIZE  
 * If rear == MAX_QSIZE => **rear = 0**  
 
 2.2.3 Multiple Stack 
 ---
 (1) Several arrays in one pool  
 (2) Generally, to implement n-stack in one array, divide array into n pieces and set the top and the bottom  
-(3) Initialize multiple stack -> equally :  
+(3) Initialize multiple stack -> set stack's size equally  
+<pre><code>top[0] = bottom[0] = -1;  
+for(i = 1; i < n; i++) {
+    top[i] = bottom[i] = (MAX_SIZE/n)*i;
+}
+bottom[n] = MAX_SIZE-1;
+</code></pre>
+* stack_empty(): top[k] == bottom[k], stack_overflow(): top[k] == bottom[k+1] 
+* void push(int k, char x): multiple_stack[++top[k]] = x; char pop(int k): return multiple_stack[top[k]--]  
+
+
+2.2.4 Application of Stack 
+---
+2.2.4.1 System Stack  
+(1) Call up the sub program/function -> control goes over there => Have to remember the place to return  
+(2) Frame ptr saves the stack frame's addr when push opr happens - when pop opr happens  
+(3) Return addr saves the addr that returned after sub program executed (실행된 뒤에)  
+(4) System stack is necessary when implement the **recrusion function**  
+
+2.3 Linked List
+====
+2.3.1 Concepts of Linked List 
+----
+(1)   
+(2) Node = Data field + Link field (Last node is NULL)  
+(3) insertion :  
+&nbsp;elimination :  
+&nbsp;concatenation :   
+
+2.3.2 Implementation of Linked Lists
+----
+2.3.2.1 Static approach (by using array, memory waste ↑)  
+(1) Declares the record and record array of the node structure (Node 구조의 record and record array)    
