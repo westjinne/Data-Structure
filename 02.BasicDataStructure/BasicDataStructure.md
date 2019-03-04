@@ -147,13 +147,19 @@ bottom[n] = MAX_SIZE-1;
 2.3.5.1 Doubly Circularly Linked List  
 (1) Connect the front node and the last node with Ptr  
 (2) **Head Node** (to clarify empty list)  
-(3) Insertion: dinsert(nodePtr x, nodePtr temp) {  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temp->llink = x; temp->rlink = x->rlink;  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x->rlink->llink = temp; x->rlink = temp; }   
-(4) EliminatioL ddelete(nodePtr d_list, nodePtr x) {  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(d_list == x) -> HeadNode. Can't delete it  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else {  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x->llink->rlink = x->rlink;  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x->rlink->llink = x->llink;  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;free(x);  }  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}  
+(3) Insertion: 
+<pre><code>
+dinsert(nodePtr x, nodePtr temp) {  
+    temp->llink = x; temp->rlink = x->rlink;  
+    x->rlink->llink = temp; x->rlink = temp; 
+    }</code></pre>
+(4) Elimination:  
+<pre><code>
+ddelete(nodePtr d_list, nodePtr x) {  
+    if(d_list == x) -> HeadNode. Can't delete it  
+    else {  
+    x->llink->rlink = x->rlink;  
+    x->rlink->llink = x->llink;  
+    free(x);
+    }  
+}  </code></pre>
