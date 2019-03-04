@@ -104,5 +104,56 @@ bottom[n] = MAX_SIZE-1;
 
 2.3.2 Implementation of Linked Lists
 ----
-2.3.2.1 Static approach (by using array, memory waste ↑)  
+2.3.2.1 Static approach (by using **array**, memory waste ↑)  
 (1) Declares the record and record array of the node structure (Node 구조의 record and record array)    
+(2) Record's link field saves its next node's array index   
+(3) NULL's link field value is -1  
+(4) List variable saves the index of the first node's array  
+(5) Keep the non-using reords to avail list   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ex) xlist = (a, b, d), ylist = (e, f, g), size = 10   
+
+2.3.2.2 Dynamic approach (by using **Pointer & Dynamic Memory Allocation**)  
+(1) Static variable => allocated in complie, fixed til the end   
+- global variable, static local variable (data segment)  
+- most of the memory allocated to static variable are not used (even it is fixed!) 
+
+(2) Dymanic Varlable => while program is running -> allocate, return  
+- use the space in the **heap** segment -> unrelocated to "Heap" that taught in Binary Tree  
+- C: use pointer, set the ptr variable(for the addr) and use it  
+- although the ptr itself might get addr value, the dynamic variable that ptr assign might be already has its own data type  
+&nbsp;&nbsp;&nbsp;char *p  
+
+2.3.3 Implementation of Stack and Queue using Linked List  
+---
+(1) push(), enqueue() => check if there's any Dynamic Memory left  
+(2) pop(), dequueue() => free unneeded Memory  
+(3) easier than circular queue  
+
+2.3.4 Circularly Linked Lists  
+---
+(1) Make the last node point the first node  
+(2) Set the list's addr = last node <- know last & first addr easily  
+(3) Stack => top: clist -> link  
+(4) Queue => rear: clist (when inserting, clist points new node)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;front: clist->link (eliminate the node that pointed by clist->link, make it point next node)  
+(5) Concat => possible in O(1)  
+
+2.3.5 Doubly Linked List  
+---
+(1) Two link (prev, next) => can find previous node easily  
+(2) llink(left), rlink(right)  
+(3) ptr = ptr->llink->rlink = ptr->rlink->llink  
+
+2.3.5.1 Doubly Circularly Linked List  
+(1) Connect the front node and the last node with Ptr  
+(2) **Head Node** (to clarify empty list)  
+(3) Insertion: dinsert(nodePtr x, nodePtr temp) {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temp->llink = x; temp->rlink = x->rlink;  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x->rlink->llink = temp; x->rlink = temp; }   
+(4) EliminatioL ddelete(nodePtr d_list, nodePtr x) {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(d_list == x) -> HeadNode. Can't delete it  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x->llink->rlink = x->rlink;  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x->rlink->llink = x->llink;  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;free(x);  }  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}  
